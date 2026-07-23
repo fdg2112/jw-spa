@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { ChevronDown } from 'lucide-react'
 import { LODGE } from '../../data/content'
 import { SquareCompass } from '../ui/SquareCompass'
+import logoJw from '../../assets/logo-jw.svg'
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null)
@@ -33,9 +34,11 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 flex items-center justify-center"
         aria-hidden="true"
       >
-        <div className="text-gold/10">
-          <SquareCompass size={560} animated={false} />
-        </div>
+        <img
+          src={logoJw}
+          alt=""
+          className="w-[560px] max-w-[90vw] opacity-10"
+        />
       </motion.div>
 
       {/* Contenido */}

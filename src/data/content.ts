@@ -4,8 +4,17 @@
 // palabras del sitio original, reorganizados para una experiencia moderna.
 // -----------------------------------------------------------------------------
 
-import zubiaurImg from '../assets/figuras/zubiaur.png'
+import agreloImg from '../assets/figuras/agrelo.png'
 import urquizaImg from '../assets/figuras/urquiza.png'
+import souriguesImg from '../assets/figuras/sourigues.png'
+import morenoImg from '../assets/figuras/moreno.png'
+import seguiImg from '../assets/figuras/seguí.png'
+import peyretImg from '../assets/figuras/peyret.png'
+import leguizamonImg from '../assets/figuras/leguizamón.png'
+import zubiaurImg from '../assets/figuras/zubiaur.png'
+import scelziImg from '../assets/figuras/scelzi.png'
+import martinezImg from '../assets/figuras/martinez.png'
+import panizzaImg from '../assets/figuras/panizza.png'
 
 export const LODGE = {
   name: 'Respetable Logia Jorge Washington',
@@ -73,29 +82,121 @@ export type Figura = {
   name: string
   years: string
   role: string
-  image: string
+  /** Retrato opcional; si falta se muestra un círculo con las iniciales. */
+  image?: string
   bio: string[]
 }
 
+// Orden narrativo, del más antiguo en la Logia al más reciente.
 export const FIGURAS: Figura[] = [
   {
-    name: 'José Benjamín Zubiaur',
-    years: '1856 – 1921',
-    role: 'Ilustre Hermano · Educador y pedagogo',
-    image: zubiaurImg,
+    name: 'Pedro José Agrelo',
+    years: '1776 – 1846',
+    role: 'Ilustre Hermano · Jurista, periodista y patriota',
+    image: agreloImg,
     bio: [
-      'Nació en Paraná, Entre Ríos, en 1856. Jurista y pedagogo, fue una de las grandes figuras de la educación argentina. Formado en el histórico Colegio del Uruguay, del que llegó a ser rector, dedicó su vida a modernizar y humanizar la enseñanza.',
-      'Introdujo en el país las excursiones escolares y el trabajo manual como herramientas formativas, impulsó la educación integral y representó a la Argentina en congresos y exposiciones pedagógicas internacionales. Hermano de nuestra Logia, su ejemplo de compromiso con la instrucción pública sigue vigente.',
+      'Nació en Buenos Aires en 1776. Jurista, periodista, docente y político, participó activamente en el proceso revolucionario iniciado en mayo de 1810. Fue fiscal, diputado, profesor de Economía Política y redactor de importantes publicaciones vinculadas con la independencia y la organización institucional de las Provincias Unidas.',
+      'Su nombre aparece relacionado con los primeros antecedentes de la masonería organizada en Concepción del Uruguay y con la fundación de la Logia en 1822. Su trayectoria representa el espíritu ilustrado y republicano de una generación que trabajó por la emancipación, la educación y la construcción de nuevas instituciones americanas.',
     ],
   },
   {
     name: 'Justo José de Urquiza',
     years: '1801 – 1870',
-    role: 'Ilustre Hermano · Primer Presidente Constitucional',
+    role: 'Ilustre Hermano · Primer Presidente Constitucional de la Confederación Argentina',
     image: urquizaImg,
     bio: [
-      'Nació en el Talar del Arroyo Largo, Entre Ríos, el 18 de octubre de 1801. Cursó sus estudios primarios en Concepción del Uruguay y los secundarios en el Colegio San Carlos de Buenos Aires. Diputado del Congreso entrerriano desde 1826, se manifestó como un notable parlamentario, favorable al sistema federal y ferviente partidario de la instrucción pública.',
-      'Gobernador de Entre Ríos y brigadier general, sus actos de gobierno pusieron en evidencia su enfoque progresista: fomentó la agricultura, estimuló el comercio, promovió industrias y fundó escuelas. Iniciado en nuestra Logia en 1847, llegó a ser Venerable Maestro y alcanzó el grado 33. Su legado sigue inspirando la vocación de servicio a la Nación.',
+      'Nació en el Talar de Arroyo Largo, Entre Ríos, el 18 de octubre de 1801. Militar, gobernador y estadista, promovió el desarrollo económico, la colonización agrícola, la educación y la organización institucional de la provincia. Su liderazgo resultó decisivo para la sanción de la Constitución Nacional de 1853.',
+      'Fue gobernador de Entre Ríos y primer presidente constitucional de la Confederación Argentina. Iniciado en nuestra Logia en 1847, llegó a ejercer como Venerable Maestro y contribuyó al sostenimiento del taller. Su legado permanece unido a la construcción de la Nación, la educación pública y la consolidación del sistema republicano.',
+    ],
+  },
+  {
+    name: 'Carlos Tomás Sourigues',
+    years: '1805 – 1870',
+    role: 'Ilustre Hermano · Educador, científico y agrimensor',
+    image: souriguesImg,
+    bio: [
+      'Nació en Bayona, Francia, en 1805. Educador, agrimensor, ingeniero y naturalista, desarrolló una extensa actividad científica y docente en Entre Ríos. Enseñó matemáticas y francés en el Colegio del Uruguay y participó en el trazado de poblaciones, colonias agrícolas y obras fundamentales para el desarrollo provincial.',
+      'Se afilió a nuestra Logia en 1863 y posteriormente presidió la Logia Abraham Lincoln de Gualeguay. Murió el 12 de julio de 1870 mientras colaboraba en la defensa de Concepción del Uruguay durante un ataque armado. Su vida estuvo marcada por el conocimiento, el servicio público y el valor puesto al servicio de la comunidad.',
+    ],
+  },
+  {
+    name: 'Martín Ruiz Moreno',
+    years: '1833 – 1919',
+    role: 'Ilustre Hermano · Jurista, magistrado e historiador',
+    image: morenoImg,
+    bio: [
+      'Nació en Paraná, Entre Ríos, en 1833. Abogado, político, magistrado e historiador, ocupó diversos cargos públicos y dedicó una parte fundamental de su obra al estudio de la historia entrerriana y de la organización nacional. Sus investigaciones constituyen una referencia para comprender las luchas políticas y militares del siglo XIX.',
+      'Fue iniciado en nuestra Logia en 1857. Desde ella participó en iniciativas destinadas a favorecer el entendimiento entre la Confederación Argentina y el Estado de Buenos Aires. Su trayectoria combinó el servicio público, la investigación histórica y la defensa de los principios republicanos, dejando una valiosa obra para la memoria de Entre Ríos.',
+    ],
+  },
+  {
+    name: 'Juan Francisco Seguí',
+    years: '1822 – 1863',
+    role: 'Ilustre Hermano · Jurista, periodista y hombre público',
+    image: seguiImg,
+    bio: [
+      'Nació en Santa Fe en 1822. Abogado, periodista y político, fue secretario y colaborador cercano del general Justo José de Urquiza. Se le atribuye la redacción del Pronunciamiento del 1º de mayo de 1851, documento mediante el cual Entre Ríos reasumió sus facultades soberanas y abrió el proceso político que conduciría a la caída de Juan Manuel de Rosas.',
+      'Fue iniciado en nuestra Logia en 1859 y participó también en talleres masónicos de Santa Fe y Rosario. Su breve pero intensa vida estuvo consagrada a la organización constitucional, la libertad de expresión y la construcción de un orden republicano. Su labor permanece ligada a uno de los momentos decisivos de la historia argentina.',
+    ],
+  },
+  {
+    name: 'Alejo Peyret',
+    years: '1826 – 1902',
+    role: 'Ilustre Hermano · Educador, pensador y colonizador',
+    image: peyretImg,
+    bio: [
+      'Nació en Serres-Castet, Francia, en 1826. Educador, periodista, agrónomo y pensador social, llegó a la Argentina en 1852 y desarrolló una extensa labor intelectual y política. Vinculado al proyecto modernizador de Justo José de Urquiza, administró la Colonia San José y promovió el desarrollo agrícola, la inmigración y la organización comunitaria.',
+      'Ejerció la docencia en el Colegio del Uruguay y difundió ideas progresistas sobre educación, libertad de conciencia y justicia social. Ingresó en nuestra Logia en 1864 y desempeñando diversos cargos. Participó activamente en la creación de la Biblioteca Popular El Porvenir y de la Asociación Educacionista La Fraternidad. Su legado representa la unión entre conocimiento, trabajo y compromiso social.',
+    ],
+  },
+  {
+    name: 'Onésimo Leguizamón',
+    years: '1839 – 1886',
+    role: 'Ilustre Hermano · Jurista, periodista y educador',
+    image: leguizamonImg,
+    bio: [
+      'Nació en Gualeguay, Entre Ríos, en 1839. Abogado, magistrado, periodista y hombre de Estado, desarrolló una destacada trayectoria en la vida pública argentina. Fue diputado nacional, ministro de Justicia e Instrucción Pública y presidente de la Suprema Corte de Justicia de la provincia de Buenos Aires.',
+      'Defendió la educación pública, el fortalecimiento institucional y la difusión de las ideas republicanas. Fue iniciado en nuestra Logia en 1863 y la presidió durante los años 1865 y 1866. Su labor masónica continuó posteriormente en otros talleres y en la Gran Logia de la Argentina. Su vida expresa una firme vocación por la justicia, la educación y el progreso cívico.',
+    ],
+  },
+  {
+    name: 'José Benjamín Zubiaur',
+    years: '1856 – 1921',
+    role: 'Ilustre Hermano · Educador y promotor del olimpismo',
+    image: zubiaurImg,
+    bio: [
+      'Nació en Paraná, Entre Ríos, en 1856. Jurista y pedagogo, fue una de las grandes figuras de la educación argentina. Formado en el histórico Colegio del Uruguay, del que llegó a ser rector, dedicó su vida a modernizar y humanizar la enseñanza, promoviendo una educación pública, práctica e inclusiva.',
+      'Introdujo las excursiones escolares, el trabajo manual y la educación física como herramientas formativas. Fue primer presidente de la Asociación Educacionista La Fraternidad e integró el primer Comité Olímpico Internacional. Iniciado en nuestra Logia en 1878, su ejemplo de compromiso con la educación, la fraternidad y el desarrollo humano mantiene plena vigencia.',
+    ],
+  },
+  {
+    name: 'José Scelzi',
+    years: '1844 – 1932',
+    role: 'Ilustre Hermano · Jurista, magistrado y servidor público',
+    image: scelziImg,
+    bio: [
+      'Abogado, docente y magistrado, José Scelzi desempeñó importantes responsabilidades en la vida institucional de Concepción del Uruguay. Ejerció funciones judiciales y municipales, y participó activamente en organizaciones civiles dedicadas al progreso social y a la asistencia mutua.',
+      'Fue iniciado en nuestra Logia en 1872 y ejerció como Venerable Maestro entre 1894 y 1897, y nuevamente entre 1899 y 1900. También fue uno de los fundadores de la Sociedad Italiana de Socorros Mutuos La Benevolenza. Su trayectoria refleja el compromiso de la masonería uruguayense con la justicia, el mutualismo y el servicio a la comunidad.',
+    ],
+  },
+  {
+    name: 'Benigno Teijeiro Martínez',
+    years: '1846 – 1925',
+    role: 'Ilustre Hermano · Historiador, docente y escritor',
+    image: martinezImg,
+    bio: [
+      'Nació en Galicia, España, en 1846, y desarrolló gran parte de su labor intelectual en Entre Ríos. Docente, escritor, periodista, agrimensor e historiador, produjo una extensa obra dedicada a la educación, la geografía y la historia argentina, con especial atención al pasado entrerriano.',
+      'Integró nuestra Logia y ejerció el cargo de Orador durante la última década del siglo XIX. Fue miembro de instituciones científicas e históricas nacionales y participó activamente en la vida cultural de Concepción del Uruguay. Su obra constituye un valioso aporte a la preservación de la memoria regional y a la difusión del conocimiento.',
+    ],
+  },
+  {
+    name: 'Delio Panizza',
+    years: '1887 – 1965',
+    role: 'Ilustre Hermano · Poeta, historiador y escritor',
+    image: panizzaImg,
+    bio: [
+      'Nació en Rosario del Tala, Entre Ríos, en 1887. Abogado, poeta, escritor e historiador, desarrolló una extensa obra inspirada en la historia, las tradiciones y los paisajes entrerrianos. Radicado en Concepción del Uruguay, convirtió su hogar en un espacio de encuentro cultural y de preservación de documentos, libros y objetos históricos.',
+      'Vinculado a nuestra Logia, investigó sus orígenes y contribuyó a conservar parte de su patrimonio y su memoria institucional. Su residencia es actualmente el Museo Municipal Casa de Delio Panizza. Su obra representa una profunda defensa de la identidad entrerriana, la cultura y la transmisión de la memoria entre generaciones.',
     ],
   },
 ]
@@ -107,7 +208,7 @@ export const LUGAR = {
   building: {
     title: 'Edificio Histórico',
     subtitle: 'La Logia del Primer Presidente Argentino',
-    text: 'Ubicada en la calle 8 de Junio, en el corazón de la Ciudad Histórica de Concepción del Uruguay, se muestra orgullosa la Respetable Logia Jorge Washington, la que supo albergar a ciudadanos ilustres de nuestro país. Su portón de reja y su templo conservan intacta la memoria de dos siglos de trabajo masónico.',
+    text: 'Ubicada en el corazón de la Ciudad Histórica de Concepción del Uruguay, se muestra orgullosa la Respetable Logia Jorge Washington, la que supo albergar a ciudadanos ilustres de nuestro país. Su portón de reja y su templo conservan intacta la memoria de dos siglos de trabajo masónico.',
   },
   city: {
     title: 'Concepción del Uruguay',
