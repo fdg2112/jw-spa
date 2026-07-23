@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="12" fill="#0b1a2f"/>
+  <g fill="none" stroke="#c9a227" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Compass -->
+    <path d="M32 14 L20 46"/>
+    <path d="M32 14 L44 46"/>
+    <circle cx="32" cy="14" r="3" fill="#c9a227"/>
+    <!-- Square -->
+    <path d="M16 40 L32 52 L48 40"/>
+  </g>
+</svg>
