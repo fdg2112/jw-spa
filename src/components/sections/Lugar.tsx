@@ -2,7 +2,7 @@ import { Landmark, MapPin } from 'lucide-react'
 import { Section } from '../ui/Section'
 import { Reveal } from '../ui/Reveal'
 import { LUGAR, LODGE } from '../../data/content'
-import logiaImg from '../../assets/logia.png'
+import logiaImg from '../../assets/logia.webp'
 
 // Ubicación real del templo: 8 de Junio 720, Concepción del Uruguay, Entre Ríos.
 const MAP_QUERY = '8 de Junio 720, Concepción del Uruguay, Entre Ríos, Argentina'

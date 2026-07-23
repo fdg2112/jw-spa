@@ -4,17 +4,17 @@
 // palabras del sitio original, reorganizados para una experiencia moderna.
 // -----------------------------------------------------------------------------
 
-import agreloImg from '../assets/figuras/agrelo.png'
-import urquizaImg from '../assets/figuras/urquiza.png'
-import souriguesImg from '../assets/figuras/sourigues.png'
-import morenoImg from '../assets/figuras/moreno.png'
-import seguiImg from '../assets/figuras/seguí.png'
-import peyretImg from '../assets/figuras/peyret.png'
-import leguizamonImg from '../assets/figuras/leguizamón.png'
-import zubiaurImg from '../assets/figuras/zubiaur.png'
-import scelziImg from '../assets/figuras/scelzi.png'
-import martinezImg from '../assets/figuras/martinez.png'
-import panizzaImg from '../assets/figuras/panizza.png'
+import agreloImg from '../assets/figuras/agrelo.webp'
+import urquizaImg from '../assets/figuras/urquiza.webp'
+import souriguesImg from '../assets/figuras/sourigues.webp'
+import morenoImg from '../assets/figuras/moreno.webp'
+import seguiImg from '../assets/figuras/seguí.webp'
+import peyretImg from '../assets/figuras/peyret.webp'
+import leguizamonImg from '../assets/figuras/leguizamón.webp'
+import zubiaurImg from '../assets/figuras/zubiaur.webp'
+import scelziImg from '../assets/figuras/scelzi.webp'
+import martinezImg from '../assets/figuras/martinez.webp'
+import panizzaImg from '../assets/figuras/panizza.webp'
 
 export const LODGE = {
   name: 'Respetable Logia Jorge Washington',

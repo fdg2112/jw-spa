@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type MouseEvent } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { Menu, X } from 'lucide-react'
 import { NAV, LODGE } from '../../data/content'
@@ -18,7 +18,18 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const closeMenu = () => setMenuOpen(false)
+  // Navegación robusta (móvil incluido): cerramos el menú y desplazamos
+  // programáticamente, en vez de depender del salto por hash del navegador.
+  const goTo = (e: MouseEvent, id: string) => {
+    e.preventDefault()
+    setMenuOpen(false)
+    const el = document.getElementById(id)
+    if (!el) return
+    requestAnimationFrame(() => {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      history.replaceState(null, '', `#${id}`)
+    })
+  }
 
   return (
     <header
@@ -30,7 +41,7 @@ export function Navbar() {
     >
       <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Marca */}
-        <a href="#inicio" onClick={closeMenu} className="group flex items-center gap-3">
+        <a href="#inicio" onClick={(e) => goTo(e, 'inicio')} className="group flex items-center gap-3">
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-gold/40 bg-midnight text-gold transition-colors group-hover:border-gold">
             <svg viewBox="0 0 64 64" className="h-6 w-6" aria-hidden="true">
               <g fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
@@ -59,6 +70,7 @@ export function Navbar() {
               <li key={item.id}>
                 <a
                   href={`#${item.id}`}
+                  onClick={(e) => goTo(e, item.id)}
                   className={`relative px-3 py-2 text-sm font-medium transition-colors ${
                     isActive ? 'text-gold' : 'text-cream/70 hover:text-cream'
                   }`}
@@ -104,7 +116,7 @@ export function Navbar() {
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    onClick={closeMenu}
+                    onClick={(e) => goTo(e, item.id)}
                     className={`block border-b border-white/5 py-3 text-base ${
                       activeId === item.id ? 'text-gold' : 'text-cream/80'
                     }`}
