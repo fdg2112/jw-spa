@@ -18,14 +18,6 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Bloquea el scroll del cuerpo cuando el menú móvil está abierto.
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? 'hidden' : ''
-    return () => {
-      document.body.style.overflow = ''
-    }
-  }, [menuOpen])
-
   const closeMenu = () => setMenuOpen(false)
 
   return (
