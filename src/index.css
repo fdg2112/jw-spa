@@ -39,7 +39,8 @@
 /* -------------------------------------------------------------------------- */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  /* Sólo lo necesario para despejar el navbar fijo (~72px). */
+  scroll-padding-top: 4.5rem;
   -webkit-text-size-adjust: 100%;
 }
 

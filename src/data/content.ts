@@ -4,6 +4,9 @@
 // palabras del sitio original, reorganizados para una experiencia moderna.
 // -----------------------------------------------------------------------------
 
+import zubiaurImg from '../assets/figuras/zubiaur.png'
+import urquizaImg from '../assets/figuras/urquiza.png'
+
 export const LODGE = {
   name: 'Respetable Logia Jorge Washington',
   number: '44',
@@ -70,26 +73,29 @@ export type Figura = {
   name: string
   years: string
   role: string
+  image: string
   bio: string[]
 }
 
 export const FIGURAS: Figura[] = [
   {
-    name: 'Jorge Washington',
-    years: '1732 – 1799',
-    role: 'Padre fundador · Masón',
+    name: 'José Benjamín Zubiaur',
+    years: '1856 – 1921',
+    role: 'Ilustre Hermano · Educador y pedagogo',
+    image: zubiaurImg,
     bio: [
-      'Nació el 22 de febrero de 1732 en Wakefield, Westmoreland, Virginia, en el seno de una familia acomodada de origen inglés. Huérfano a corta edad, fue amparado por su hermano Lawrence y recibió una educación elemental; a los 14 años reveló interés por la carrera de las armas.',
-      'Serio, introvertido y metódico, destacaba por su espíritu decidido. Iniciado Masón en 1752, encarnó como pocos los ideales de la Fraternidad. Elegido general en jefe de los ejércitos rebeldes, condujo la lucha por la independencia y se convirtió en el primer presidente de los Estados Unidos, símbolo universal de la libertad.',
+      'Nació en Paraná, Entre Ríos, en 1856. Jurista y pedagogo, fue una de las grandes figuras de la educación argentina. Formado en el histórico Colegio del Uruguay, del que llegó a ser rector, dedicó su vida a modernizar y humanizar la enseñanza.',
+      'Introdujo en el país las excursiones escolares y el trabajo manual como herramientas formativas, impulsó la educación integral y representó a la Argentina en congresos y exposiciones pedagógicas internacionales. Hermano de nuestra Logia, su ejemplo de compromiso con la instrucción pública sigue vigente.',
     ],
   },
   {
     name: 'Justo José de Urquiza',
     years: '1801 – 1870',
     role: 'Ilustre Hermano · Primer Presidente Constitucional',
+    image: urquizaImg,
     bio: [
       'Nació en el Talar del Arroyo Largo, Entre Ríos, el 18 de octubre de 1801. Cursó sus estudios primarios en Concepción del Uruguay y los secundarios en el Colegio San Carlos de Buenos Aires. Diputado del Congreso entrerriano desde 1826, se manifestó como un notable parlamentario, favorable al sistema federal y ferviente partidario de la instrucción pública.',
-      'Gobernador de Entre Ríos y brigadier general, sus actos de gobierno pusieron en evidencia su enfoque progresista: fomentó la agricultura, estimuló el comercio, promovió industrias y fundó escuelas. Ilustre Hermano de nuestra Logia, su legado sigue inspirando la vocación de servicio a la Nación.',
+      'Gobernador de Entre Ríos y brigadier general, sus actos de gobierno pusieron en evidencia su enfoque progresista: fomentó la agricultura, estimuló el comercio, promovió industrias y fundó escuelas. Iniciado en nuestra Logia en 1847, llegó a ser Venerable Maestro y alcanzó el grado 33. Su legado sigue inspirando la vocación de servicio a la Nación.',
     ],
   },
 ]
@@ -122,16 +128,69 @@ export const RECURSOS: Recurso[] = [
 ]
 
 // --- Novedades / Artículos --------------------------------------------------
-export type Articulo = { title: string; excerpt: string; tag: string }
+// Noticias reales sobre la institución, con enlace a la fuente publicada.
+export type Articulo = {
+  title: string
+  excerpt: string
+  tag: string
+  source: string
+  date: string
+  url: string
+}
 
 export const NOVEDADES: Articulo[] = [
-  { tag: 'Institucional', title: 'Visita de Estudiantes de la UADER', excerpt: 'Abrimos las puertas de nuestra casa para recibir a estudiantes y docentes de la carrera de Licenciatura en Turismo de la Facultad de Ciencias de la Gestión.' },
-  { tag: 'Efemérides', title: 'Las fotos del Bicentenario', excerpt: 'Momentos inolvidables, imágenes imborrables y todos los recuerdos del Bicentenario de nuestra Logia.' },
-  { tag: 'Homenaje', title: 'Homenaje a Pablo Schvartzman', excerpt: 'Nuestra sobrina Itatí, escritora, comparte una hermosa pieza literaria que nos acerca aún más a Pablo, figura destacada de la ciudad y hermano entrañable.' },
-  { tag: 'Cultura', title: '¿Por qué una Hemeroteca?', excerpt: 'Internet ha modificado de forma abismal el funcionamiento de las hemerotecas: digitalmente ofrecen la posibilidad de consultar cualquier tipo de información.' },
-  { tag: 'Filosofía', title: '¿Qué es la Masonería?', excerpt: 'Un libro para descargar, con todas las respuestas que el interesado en ingresar a una logia masónica desea conocer acerca de esta antigua y dinámica Fraternidad.' },
-  { tag: 'Historia', title: 'Breve Historia de la Masonería', excerpt: 'Compartimos un interesante audio de National Geographic acerca de los orígenes de esta institución defensora de la dignidad humana y la fraternidad.' },
-  { tag: 'Próceres', title: 'Martín Ruíz Moreno', excerpt: 'Un masón imprescindible en la vida institucional de Entre Ríos y de la Nación.' },
-  { tag: 'Próceres', title: 'Onésimo Leguizamón, nuestro hermano', excerpt: 'Una mirada amable y sincera sobre un ser extraordinario que dejó huella en la educación argentina.' },
-  { tag: 'Espiritualidad', title: '¿Qué es la Espiritualidad Iniciática?', excerpt: '¿A qué nos referimos cuando hablamos de iniciados o de iniciación? ¿Qué es la iluminación? ¿Podemos alcanzarla? Todas las respuestas en un audio.' },
+  {
+    tag: 'Evento',
+    date: '2025',
+    source: 'La Prensa Federal',
+    title: 'La Gran Logia de la Argentina visita Concepción del Uruguay',
+    excerpt:
+      'En mayo de 2025 la Gran Logia se presentó ante la ciudad con una charla libre, gratuita y abierta a todo público, y un recorrido por sitios históricos vinculados a la masonería local.',
+    url: 'https://www.laprensafederal.com.ar/la-gran-logia-de-la-argentina-visitara-concepcion-del-uruguay/',
+  },
+  {
+    tag: 'Bicentenario',
+    date: '2022',
+    source: 'El Miércoles Digital',
+    title: 'La logia masónica cumple doscientos años',
+    excerpt:
+      'A 200 años de su fundación en 1822, un repaso por la historia de la Jorge Washington N° 44 y su influencia en las instituciones de Concepción del Uruguay.',
+    url: 'https://www.elmiercolesdigital.com.ar/?p=96844',
+  },
+  {
+    tag: 'Efeméride',
+    date: '1822',
+    source: 'Revista La Ciudad',
+    title: '29 de agosto de 1822: se funda la Logia Jorge Washington',
+    excerpt:
+      'El coronel Juan Florencio Perea funda la logia, hoy la más antigua del país en actividad, que llegaría a contar entre sus miembros a Justo José de Urquiza.',
+    url: 'https://laciudadrevista.com/el-29-de-agosto-de-1822-se-funda-en-concepcion-del-uruguay-la-logia-masonica-jorge-washington/',
+  },
+  {
+    tag: 'Patrimonio',
+    date: '1878',
+    source: 'Concepción, historia y turismo',
+    title: 'El Templo Masónico de Concepción del Uruguay',
+    excerpt:
+      'Construido en 1878 por los arquitectos y hermanos Pedro Riva y Luis Conturbi, el edificio de calle 8 de Junio es un emblema patrimonial de la ciudad.',
+    url: 'https://concepcionhistoriayturismo.com/2018/04/12/templo-masonico-de-concepcion-del-uruguay/',
+  },
+  {
+    tag: 'Institucional',
+    date: 'Historia',
+    source: 'Revista La Ciudad',
+    title: 'La Logia Jorge Washington de Concepción del Uruguay',
+    excerpt:
+      'La historia de la institución: sus persecuciones, la pérdida y posterior recuperación de su archivo y el legado de sus miembros más destacados.',
+    url: 'https://laciudadrevista.com/logia-masonica-jorge-washington-de-concepcion-del-uruguay/',
+  },
+  {
+    tag: 'Historia',
+    date: '1874',
+    source: 'Concepción, historia y turismo',
+    title: 'La colonia Caseros y la Logia Jorge Washington',
+    excerpt:
+      'El rol de los hermanos de la logia —la más antigua de Entre Ríos— en la organización de la colonia Caseros, fundada en 1874.',
+    url: 'https://concepcionhistoriayturismo.com/2019/03/24/la-colonia-caseros-y-la-logia-jorge-washington-de-concepcion-del-uruguay/',
+  },
 ]

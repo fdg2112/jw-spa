@@ -69,8 +69,7 @@ export function Hero() {
         >
           Respetable Logia
           <br />
-          <span className="text-gradient-gold">Jorge Washington</span>
-          <span className="ml-3 align-top font-inscription text-3xl text-gold/80">N° 44</span>
+          <span className="text-gradient-gold">Jorge Washington N° 44</span>
         </motion.h1>
 
         <motion.p

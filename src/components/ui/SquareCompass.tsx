@@ -55,13 +55,14 @@ export function SquareCompass({ size = 200, animated = true, className }: Square
       {/* Escuadra (ángulo recto abierto hacia arriba) */}
       <motion.path d="M44 120 L100 168 L156 120" variants={draw} custom={1.1} {...strokeProps} />
 
-      {/* Letra G central */}
+      {/* Letra G central: círculo abierto arriba-derecha + barra que nace
+          del borde derecho hacia el centro (trazo continuo, estilo geométrico). */}
       <motion.path
-        d="M118 96 a24 24 0 1 0 0 24 M118 108 h-11"
+        d="M108 100.5 A14 14 0 1 0 114 112 L101 112"
         variants={draw}
         custom={1.6}
         {...strokeProps}
-        strokeWidth={5}
+        strokeWidth={4}
       />
     </motion.svg>
   )

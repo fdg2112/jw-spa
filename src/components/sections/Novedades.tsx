@@ -13,26 +13,29 @@ export function Novedades() {
     >
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {NOVEDADES.map((articulo, i) => (
-          <Reveal as="article" key={articulo.title} delay={(i % 3) * 0.08}>
+          <Reveal as="article" key={articulo.url} delay={(i % 3) * 0.08}>
             <a
-              href="#contacto"
+              href={articulo.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex h-full flex-col rounded-xl border border-white/5 bg-midnight-soft/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-glow"
             >
               <div className="mb-4 flex items-center justify-between">
                 <span className="rounded-full border border-gold/30 px-3 py-1 font-inscription text-[0.6rem] uppercase tracking-[0.15em] text-gold">
                   {articulo.tag}
                 </span>
-                <ArrowUpRight
-                  size={18}
-                  className="text-cream/30 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-gold"
-                />
+                <span className="text-xs text-cream/40">{articulo.date}</span>
               </div>
               <h3 className="font-display text-xl font-semibold leading-snug text-cream transition-colors group-hover:text-gold">
                 {articulo.title}
               </h3>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-cream/60">{articulo.excerpt}</p>
-              <span className="mt-5 inline-flex items-center gap-1 text-xs font-medium text-gold/80">
-                Consultar
+              <span className="mt-5 flex items-center gap-1.5 border-t border-white/5 pt-4 text-xs font-medium text-gold/80">
+                <ArrowUpRight
+                  size={15}
+                  className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+                Leer en {articulo.source}
               </span>
             </a>
           </Reveal>

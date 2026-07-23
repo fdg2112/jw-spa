@@ -1,7 +1,11 @@
-import { Landmark, Waves } from 'lucide-react'
+import { Landmark, MapPin } from 'lucide-react'
 import { Section } from '../ui/Section'
 import { Reveal } from '../ui/Reveal'
 import { LUGAR, LODGE } from '../../data/content'
+
+// Ubicación real del templo: 8 de Junio 720, Concepción del Uruguay, Entre Ríos.
+const MAP_QUERY = '8 de Junio 720, Concepción del Uruguay, Entre Ríos, Argentina'
+const MAP_SRC = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&z=16&output=embed`
 
 export function Lugar() {
   return (
@@ -30,22 +34,29 @@ export function Lugar() {
           </div>
         </Reveal>
 
-        {/* Ciudad */}
+        {/* Mapa de ubicación */}
         <Reveal direction="left" delay={0.1}>
-          <div className="group relative h-full overflow-hidden rounded-2xl border border-white/5 bg-midnight-deep p-8">
-            <div className="pointer-events-none absolute -right-10 -top-10 text-gold/5 transition-transform duration-500 group-hover:scale-110">
-              <Waves size={200} strokeWidth={1} />
-            </div>
-            <div className="relative">
-              <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gold/10 text-gold">
-                <Waves size={24} />
+          <div className="group flex h-full min-h-[360px] flex-col overflow-hidden rounded-2xl border border-white/5 bg-midnight-deep">
+            <div className="flex items-center gap-3 border-b border-white/5 p-5">
+              <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gold/10 text-gold">
+                <MapPin size={22} />
               </span>
-              <h3 className="font-display text-2xl font-semibold text-cream">{LUGAR.city.title}</h3>
-              <p className="mt-1 font-inscription text-xs uppercase tracking-[0.15em] text-gold/80">
-                {LODGE.province} · {LODGE.country}
-              </p>
-              <p className="mt-4 leading-relaxed text-cream/70">{LUGAR.city.text}</p>
+              <div>
+                <h3 className="font-display text-xl font-semibold text-cream">Cómo llegar</h3>
+                <p className="text-sm text-cream/60">
+                  {LODGE.address.split(',')[0]} · {LUGAR.city.title}
+                </p>
+              </div>
             </div>
+            <iframe
+              title={`Ubicación de la ${LODGE.shortName}`}
+              src={MAP_SRC}
+              className="w-full flex-1 grayscale-[.35] transition-all duration-500 group-hover:grayscale-0"
+              style={{ border: 0, minHeight: 260 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
           </div>
         </Reveal>
       </div>

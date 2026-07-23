@@ -33,11 +33,11 @@ export function Section({
   return (
     <section
       id={id}
-      className={`relative scroll-mt-20 px-6 py-24 sm:py-28 ${tone === 'soft' ? 'bg-midnight-soft/40' : ''} ${className}`}
+      className={`relative px-6 py-16 sm:py-20 ${tone === 'soft' ? 'bg-midnight-soft/40' : ''} ${className}`}
     >
       <div className="mx-auto max-w-6xl">
         {(eyebrow || title || lead) && (
-          <Reveal className={`mb-14 flex max-w-3xl flex-col gap-4 ${alignment}`}>
+          <Reveal className={`mb-10 sm:mb-12 flex max-w-3xl flex-col gap-4 ${alignment}`}>
             {eyebrow && <span className="eyebrow">{eyebrow}</span>}
             {title && (
               <h2 className="font-display text-4xl font-semibold leading-tight text-cream sm:text-5xl">

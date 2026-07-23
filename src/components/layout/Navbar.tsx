@@ -36,7 +36,7 @@ export function Navbar() {
           : 'border-b border-transparent bg-transparent'
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <nav className="relative mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         {/* Marca */}
         <a href="#inicio" onClick={closeMenu} className="group flex items-center gap-3">
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-gold/40 bg-midnight text-gold transition-colors group-hover:border-gold">
@@ -59,8 +59,8 @@ export function Navbar() {
           </span>
         </a>
 
-        {/* Enlaces de escritorio */}
-        <ul className="hidden items-center gap-1 lg:flex">
+        {/* Enlaces de escritorio (centrados) */}
+        <ul className="absolute left-1/2 top-1/2 hidden w-max -translate-x-1/2 -translate-y-1/2 items-center gap-1 whitespace-nowrap lg:flex">
           {NAV.map((item) => {
             const isActive = activeId === item.id
             return (
@@ -84,14 +84,6 @@ export function Navbar() {
             )
           })}
         </ul>
-
-        {/* CTA escritorio */}
-        <a
-          href="#contacto"
-          className="hidden rounded-full border border-gold/50 px-5 py-2 text-sm font-medium text-gold transition-all hover:bg-gold hover:text-midnight-deep lg:inline-block"
-        >
-          Contactar
-        </a>
 
         {/* Botón menú móvil */}
         <button
