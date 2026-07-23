@@ -1,0 +1,125 @@
+@import 'tailwindcss';
+
+/* Tipografías locales (self-hosted, sin CDN) */
+@import '@fontsource/cinzel/400.css';
+@import '@fontsource/cinzel/600.css';
+@import '@fontsource/cinzel/700.css';
+@import '@fontsource/cormorant-garamond/400.css';
+@import '@fontsource/cormorant-garamond/500.css';
+@import '@fontsource/cormorant-garamond/600.css';
+@import '@fontsource/cormorant-garamond/400-italic.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+
+/* -------------------------------------------------------------------------- */
+/*  Design tokens                                                             */
+/* -------------------------------------------------------------------------- */
+@theme {
+  --color-midnight: #0b1a2f;
+  --color-midnight-deep: #071324;
+  --color-midnight-soft: #12263f;
+  --color-navy: #163050;
+  --color-gold: #c9a227;
+  --color-gold-light: #e6c66a;
+  --color-gold-deep: #9c7b1a;
+  --color-cream: #f5f1e6;
+  --color-parchment: #efe8d6;
+  --color-ink: #14202e;
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-inscription: 'Cinzel', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --shadow-glow: 0 0 60px -12px rgba(201, 162, 39, 0.45);
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Base                                                                      */
+/* -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-midnight-deep);
+  color: var(--color-cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-midnight-deep);
+}
+
+/* Scrollbar dorado sutil */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-midnight-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--color-gold-deep), var(--color-gold));
+  border-radius: 999px;
+  border: 2px solid var(--color-midnight-deep);
+}
+
+/* -------------------------------------------------------------------------- */
+/*  Utilidades de marca                                                       */
+/* -------------------------------------------------------------------------- */
+.font-display {
+  font-family: var(--font-display);
+}
+.font-inscription {
+  font-family: var(--font-inscription);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(120deg, var(--color-gold-light), var(--color-gold) 55%, var(--color-gold-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.eyebrow {
+  font-family: var(--font-inscription);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  color: var(--color-gold);
+}
+
+/* Fondo con textura de estrellas / puntos muy sutil */
+.bg-stars {
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(230, 198, 106, 0.5) 50%, transparent),
+    radial-gradient(1px 1px at 70% 60%, rgba(230, 198, 106, 0.35) 50%, transparent),
+    radial-gradient(1.5px 1.5px at 45% 80%, rgba(245, 241, 230, 0.25) 50%, transparent),
+    radial-gradient(1px 1px at 85% 20%, rgba(230, 198, 106, 0.3) 50%, transparent);
+  background-size: 100% 100%;
+}
+
+/* Línea divisoria decorativa */
+.rule-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
