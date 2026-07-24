@@ -3,10 +3,12 @@ import { useRef } from 'react'
 import { ChevronDown } from 'lucide-react'
 import { LODGE } from '../../data/content'
 import { SquareCompass } from '../ui/SquareCompass'
+import { useCondenseToFit } from '../../hooks/useCondenseToFit'
 import logoJw from '../../assets/logo-jw.svg'
 
 export function Hero() {
   const ref = useRef<HTMLElement>(null)
+  const titleRef = useCondenseToFit<HTMLHeadingElement>()
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
@@ -65,6 +67,7 @@ export function Hero() {
         </motion.span>
 
         <motion.h1
+          ref={titleRef}
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.55, duration: 0.9 }}
@@ -72,7 +75,9 @@ export function Hero() {
         >
           Respetable Logia
           <br />
-          <span className="text-gradient-gold">Jorge Washington N° 44</span>
+          <span className="text-gradient-gold">
+            Jorge Washington <span className="whitespace-nowrap">N°&nbsp;44</span>
+          </span>
         </motion.h1>
 
         <motion.p
