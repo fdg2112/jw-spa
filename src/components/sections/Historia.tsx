@@ -24,7 +24,7 @@ export function Historia() {
         {/* Línea de tiempo */}
         <div className="relative">
           <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-gold/60 via-gold/30 to-transparent" />
-          <ul className="space-y-8">
+          <ul className="space-y-[clamp(1.1rem,3.2vh,2rem)]">
             {HISTORIA.milestones.map((m, i) => (
               <Reveal as="li" key={m.year} direction="left" delay={i * 0.1} className="relative pl-10">
                 <span className="absolute left-0 top-1.5 flex h-4 w-4 items-center justify-center">

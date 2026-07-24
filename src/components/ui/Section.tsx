@@ -33,14 +33,17 @@ export function Section({
   return (
     <section
       id={id}
-      className={`relative px-6 pt-6 pb-10 sm:pt-8 sm:pb-12 ${tone === 'soft' ? 'bg-midnight-soft/40' : ''} ${className}`}
+      className={`section-shell relative px-6 ${tone === 'soft' ? 'bg-midnight-soft/40' : ''} ${className}`}
     >
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto w-full max-w-6xl">
         {(eyebrow || title || lead) && (
-          <Reveal className={`mb-7 sm:mb-9 flex max-w-3xl flex-col gap-2.5 ${alignment}`}>
+          <Reveal
+            className={`flex max-w-3xl flex-col gap-2.5 ${alignment}`}
+            style={{ marginBottom: 'clamp(1rem, 3.5vh, 2.25rem)' }}
+          >
             {eyebrow && <span className="eyebrow">{eyebrow}</span>}
             {title && (
-              <h2 className="font-display text-4xl font-semibold leading-tight text-cream sm:text-5xl">
+              <h2 className="section-title font-display font-semibold text-cream">
                 {title}
               </h2>
             )}

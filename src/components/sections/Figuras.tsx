@@ -41,7 +41,7 @@ function Card({ figura }: { figura: Figura }) {
       {/* Panel: retrato + encabezado sobre el mismo fondo */}
       <div className="relative overflow-hidden bg-gradient-to-b from-navy/50 via-midnight-deep/60 to-midnight-soft">
         {/* Retrato completo (sin recorte) */}
-        <div className="relative flex h-52 items-end justify-center px-6 pt-5 sm:h-60">
+        <div className="relative flex h-[clamp(6.5rem,15vh,13rem)] items-end justify-center px-6 pt-4">
           {/* Halo dorado detrás del retrato */}
           <div className="pointer-events-none absolute inset-x-0 top-5 mx-auto h-40 w-40 rounded-full bg-[radial-gradient(circle,_rgba(201,162,39,0.16),_transparent_70%)] blur-xl" />
           <Portrait figura={figura} />
@@ -58,7 +58,7 @@ function Card({ figura }: { figura: Figura }) {
         </header>
       </div>
       {/* Biografía */}
-      <div className="space-y-2 border-t border-gold/15 p-5 text-sm text-cream/70">
+      <div className="space-y-2 border-t border-gold/15 p-[clamp(1rem,2.2vh,1.25rem)] text-sm text-cream/70">
         {figura.bio.map((p, j) => (
           <p key={j} className="text-justify leading-normal">
             {p}

@@ -1,5 +1,5 @@
 import { motion, type Variants } from 'motion/react'
-import type { ReactNode } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 
 type Direction = 'up' | 'down' | 'left' | 'right' | 'none'
 
@@ -11,6 +11,8 @@ type RevealProps = {
   delay?: number
   /** Clases adicionales para el contenedor. */
   className?: string
+  /** Estilos en línea (p. ej. spacing fluido con clamp). */
+  style?: CSSProperties
   /** Elemento HTML a renderizar. */
   as?: 'div' | 'section' | 'li' | 'article' | 'span'
 }
@@ -44,13 +46,14 @@ function buildVariants(direction: Direction, delay: number): Variants {
  * Envoltorio que revela su contenido con una animación suave cuando entra en
  * el viewport. Respeta `prefers-reduced-motion` a través de Motion.
  */
-export function Reveal({ children, direction = 'up', delay = 0, className, as = 'div' }: RevealProps) {
+export function Reveal({ children, direction = 'up', delay = 0, className, style, as = 'div' }: RevealProps) {
   // El cast evita el "union type too complex" al indexar motion con una unión de tags.
   const MotionTag = motion[as] as typeof motion.div
 
   return (
     <MotionTag
       className={className}
+      style={style}
       variants={buildVariants(direction, delay)}
       initial="hidden"
       whileInView="visible"

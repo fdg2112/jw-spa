@@ -72,6 +72,46 @@ body {
 }
 
 /* -------------------------------------------------------------------------- */
+/*  Ritmo fluido "fit-to-viewport"                                            */
+/* -------------------------------------------------------------------------- */
+/*
+ * Cada sección ocupa el alto visible del monitor y centra su contenido.
+ * El espaciado y los tamaños se atan al viewport (vh/vmin) con clamp(), de
+ * modo que el contenido se comprime solo cuando hay menos alto disponible
+ * (p. ej. escala de Windows al 150%). Sin JS, sin recortes manuales.
+ *
+ * --nav-h: alto reservado para el navbar fijo.
+ */
+:root {
+  --nav-h: 4.5rem;
+}
+
+.section-shell {
+  /*
+   * Altura natural (contenido + padding). El contenido ya entra en una
+   * pantalla; no se fuerza 100svh ni se centra (eso creaba huecos gigantes).
+   * Padding vertical fluido: el top solo despeja el navbar fijo (~72px) y crece
+   * apenas en monitores altos; nada de espacio muerto entre navbar y título.
+   */
+  /* top: mínimo 72px (despeje del navbar fijo, si no tapa el título) + un poco. */
+  padding-top: clamp(4.5rem, 4rem + 1vh, 5.25rem);
+  /* bottom: más generoso para equilibrar el bloque en pantalla. */
+  padding-bottom: clamp(3rem, 6vh, 5rem);
+}
+
+/* Título de sección: escala continua entre móvil y escritorio ancho. */
+.section-title {
+  font-size: clamp(1.9rem, 1.15rem + 2.4vw, 3rem);
+  line-height: 1.1;
+}
+
+/* Título del Hero (portada): más grande, misma lógica. */
+.hero-title {
+  font-size: clamp(2.6rem, 1.6rem + 4.4vw, 4.75rem);
+  line-height: 1.05;
+}
+
+/* -------------------------------------------------------------------------- */
 /*  Utilidades de marca                                                       */
 /* -------------------------------------------------------------------------- */
 .font-display {

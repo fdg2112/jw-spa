@@ -11,14 +11,14 @@ export function Novedades() {
       title="Novedades"
       lead="Homenajes, efemérides, cultura y documentos que compartimos con la comunidad."
     >
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-[clamp(0.9rem,2.5vh,1.5rem)] md:grid-cols-2 lg:grid-cols-3">
         {NOVEDADES.map((articulo, i) => (
           <Reveal as="article" key={articulo.url} delay={(i % 3) * 0.08}>
             <a
               href={articulo.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex h-full flex-col rounded-xl border border-white/5 bg-midnight-soft/40 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-glow"
+              className="group flex h-full flex-col rounded-xl border border-white/5 bg-midnight-soft/40 p-[clamp(1rem,2.4vh,1.5rem)] transition-all duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-glow"
             >
               <div className="mb-4 flex items-center justify-between">
                 <span className="rounded-full border border-gold/30 px-3 py-1 font-inscription text-[0.6rem] uppercase tracking-[0.15em] text-gold">

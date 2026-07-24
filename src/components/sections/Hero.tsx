@@ -21,7 +21,7 @@ export function Hero() {
     <section
       id="inicio"
       ref={ref}
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-midnight-deep"
+      className="relative flex min-h-svh items-center justify-center overflow-hidden bg-midnight-deep"
     >
       {/* Capas de fondo */}
       <div className="absolute inset-0 bg-stars opacity-70" />
@@ -68,7 +68,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.55, duration: 0.9 }}
-          className="font-display text-5xl font-semibold leading-[1.05] text-cream sm:text-6xl md:text-7xl"
+          className="hero-title font-display font-semibold text-cream"
         >
           Respetable Logia
           <br />
